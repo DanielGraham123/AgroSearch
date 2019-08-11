@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--<style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"-->
+    <!--<style name="ButtomTheme" parent="Theme.MaterialComponents.Bridge">-->
+        <!--<item name="android:background">@color/colorPrimary</item>-->
+        <!--<item name=""-->
+        <!--<item name="itemTextColor">#FFFFFF</item>-->
+    <!--</style>-->
+</resources>

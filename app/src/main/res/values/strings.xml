@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name" translatable="false">Agro~Search</string>
+
+    <string name="appraisal">In partial fulfillment to the development of Cameroon by 2035</string>
+    <string name="powered_by">IRAD CAMEROON</string>
+    <string name="collaboration">TECH-GUYS</string>
+    <string name="language">Language</string>
+
+    <!--Shared Preferences configs-->
+    <string name="lastUpdatePrefs" translatable="false">com.irad.cm.agri_tech_last_updates</string>
+    <string name="lastUpdateTime" translatable="false"></string>
+    <string name="lastHumidity" translatable="false"></string>
+    <string name="lastPressure" translatable="false"></string>
+    <string name="lastWind" translatable="false"></string>
+    <string name="lastDescription" translatable="false"></string>
+    <string name="lastTemperature" translatable="false"></string>
+    <string name="lastLocation" translatable="false"></string>
+
+    <!--Dialog titles-->
+    <string name="choose_language">Translate App</string>
+    <string name="city_search">Search a City</string>
+
+    <string name="test">Coming Soon...</string>
+
+    <!--bottom nav menu-->
+    <string name="home">Home</string>
+    <string name="signup">Sign Up</string>
+    <string name="locateMe">Locate Me</string>
+
+    <!--home menu-->
+    <string name="climate">Climate</string>
+    <string name="diseases">Plants and diseases</string>
+    <string name="innovations">Agriculture Innovations</string>
+    <string name="marketPrice">Market Prices</string>
+    <string name="animal">Animals</string>
+    <string name="vegetale">Crops</string>
+
+    <!--Connection status-->
+    <string name="status_title">Alert!</string>
+    <string name="status">Dear User,\n
+        You are not online. Please connect to a network in order to get a better experience from this app...
+    </string>
+
+    <!--Weather activity header menu-->
+    <string name="about">About</string>
+
+    <!--Today Weather tags-->
+    <string name="wind">Wind:</string>
+    <string name="humidity">Humidity:</string>
+    <string name="pressure">Pressure:</string>
+
+    <!--Tab Titles-->
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="other">Other</string>
+</resources>

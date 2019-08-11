@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Agro~Search</string>
+    <string name="appraisal">En réalisation partielle du développement du Cameroun d\'ici 2035</string>
+    <string name="collaboration">TECH-GUYS</string>
+    <string name="language">Langues</string>
+    <string name="powered_by">IRAD CAMEROUN</string>
+    <string name="choose_language">Traduire l\'application</string>
+    <string name="test">Arrive bientôt...</string>
+    <string name="home">Acceuil</string>
+    <string name="locateMe">Me Localiser</string>
+    <string name="signup">S\'abonner</string>
+    <string name="vegetale">Production Végétal</string>
+    <string name="innovations">Innovations agricoles</string>
+    <string name="marketPrice">P.U. sur le Marché</string>
+    <string name="diseases">Plantes et Maladies</string>
+    <string name="climate">Météo</string>
+    <string name="animal">Production Animale</string>
+    <string name="status">Cher Utilisateur,\nVous n\'êtes pas en ligne. S\'il vous plaît, connectez vous à un réseau afin d\'obtenir une meilleure expérience de cette application ...</string>
+    <string name="status_title">Alerte!</string>
+    <string name="about">À propos</string>
+    <string name="city_search">Rechercher une ville</string>
+    <string name="humidity">"Humidité:"</string>
+    <string name="pressure">"Pression:"</string>
+    <string name="wind">"Vent:"</string>
+    <string name="other">Autres</string>
+    <string name="today">Aujourd\'hui</string>
+    <string name="tomorrow">Demain</string>
+</resources>
