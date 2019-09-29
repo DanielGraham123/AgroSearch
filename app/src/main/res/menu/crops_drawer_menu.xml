@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:title="@string/actions">
+        <menu>
+            <item
+                android:id="@+id/home"
+                android:icon="@drawable/ic_home"
+                android:title="@string/home" />
+            <item
+                android:id="@+id/crop_list"
+                android:icon="@drawable/ic_view_list_black_24dp"
+                android:title="@string/crops_list" />
+        </menu>
+    </item>
+    <item android:title="@string/filter">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/annual"
+                    android:icon="@drawable/wheat"
+                    android:title="@string/annual_crops" />
+                <item
+                    android:id="@+id/perennial"
+                    android:icon="@drawable/cocoa"
+                    android:title="@string/perennial_crops" />
+                <item
+                    android:id="@+id/fisheries"
+                    android:icon="@drawable/fish"
+                    android:title="@string/fisheries" />
+            </group>
+        </menu>
+    </item>
+    <!--<menu>-->
+        <item
+            android:id="@+id/crop_action_signup"
+            android:icon="@drawable/ic_person_add_black_24dp"
+            android:title="@string/signup" />
+        <item
+            android:id="@+id/crop_action_location"
+            android:icon="@drawable/ic_location"
+            android:title="@string/locateMe" />
+    <!--</menu>-->
+</menu>

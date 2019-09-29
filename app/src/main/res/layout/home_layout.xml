@@ -30,7 +30,7 @@
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-            android:id="@+id/cropId">
+            android:id="@+id/cropId">0dp
 
             <LinearLayout
                 android:layout_width="wrap_content"

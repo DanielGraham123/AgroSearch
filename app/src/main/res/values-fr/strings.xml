@@ -10,7 +10,7 @@
     <string name="home">Acceuil</string>
     <string name="locateMe">Me Localiser</string>
     <string name="signup">S\'abonner</string>
-    <string name="vegetale">Production Végétal</string>
+    <string name="vegetale">Production Végétale</string>
     <string name="innovations">Innovations agricoles</string>
     <string name="marketPrice">P.U. sur le Marché</string>
     <string name="diseases">Plantes et Maladies</string>
@@ -26,4 +26,15 @@
     <string name="other">Autres</string>
     <string name="today">Aujourd\'hui</string>
     <string name="tomorrow">Demain</string>
+    <string name="crops_title">Production Végétale</string>
+    <string name="crops_list">Liste de Récolte</string>
+    <string name="annual_crops">Cultures Annuelle</string>
+    <string name="perennial_crops">Cultures Pérennes</string>
+    <string name="fisheries">Animales et Halieutiques</string>
+    <string name="actions">Actions</string>
+    <string name="filter">Filtrer</string>
+    <string name="crop_desc">À propos</string>
+    <string name="crop_disease">Maladies</string>
+    <string name="crop_papers">Articles</string>
+    <string name="crop_variety">Variétés</string>
 </resources>

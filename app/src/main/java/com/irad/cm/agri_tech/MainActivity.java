@@ -36,7 +36,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
+
+import com.irad.cm.agri_tech.fragments.HomeFragment;
+import com.irad.cm.agri_tech.fragments.LocateMeFragment;
+import com.irad.cm.agri_tech.fragments.SignupFragment;
 
 import java.io.IOException;
 import java.util.List;

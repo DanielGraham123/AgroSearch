@@ -53,4 +53,25 @@
     <string name="today">Today</string>
     <string name="tomorrow">Tomorrow</string>
     <string name="other">Other</string>
+
+    <!--Crops-->
+    <string name="crops_title">Crops</string>
+    <string name="crops_list">Crop List</string>
+    <string name="annual_crops">Annual Crops</string>
+    <string name="perennial_crops">Perennial Crops</string>
+    <string name="fisheries">Animals and Fisheries</string>
+    <string name="actions">Actions</string>
+    <string name="filter">Filter</string>
+    <string name="navigation_drawer_open" translatable="false">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close Navigation Drawer</string>
+
+    <!--Crop Detail-->
+    <string name="crop_desc">About</string>
+    <string name="crop_variety">Varieties</string>
+    <string name="crop_disease">Diseases</string>
+    <string name="crop_papers">Papers</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

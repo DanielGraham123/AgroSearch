@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.irad.cm.agri_tech.climate.WeatherActivity;
+
 public abstract class OptionsMenuActivity extends AppCompatActivity {
 
     MainActivity main;

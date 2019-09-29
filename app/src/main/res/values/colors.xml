@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#001800</color>
     <color name="colorAccent">#396343</color>
     <color name="activeAppearance">#DDF0DD</color>
+    <color name="inactiveAppearance">#C5CCC5</color>
 </resources>
     <!--FF008A11-->
     <!--001800-->

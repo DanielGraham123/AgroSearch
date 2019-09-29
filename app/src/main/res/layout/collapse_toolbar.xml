@@ -57,6 +57,7 @@
                     android:textColor="#fff"
                     android:textSize="15dp"
                     android:id="@+id/windView"/>
+                    android:text="Weather: 17.1 kph"
 
                 <TextView
                     android:layout_width="wrap_content"
