@@ -21,14 +21,17 @@ import java.util.Map;
 
 public class SplashScreen extends AppCompatActivity {
     final private int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 124;
+    Utilities utilities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         permissioncheck();
+        utilities = new Utilities(this, this);
 
-//        new Handler().postDelayed(new Runnable() {
+
+//        new Handler().postDelayed(new Runnable() {static
 //            @Override
 //            public void run() {
 //                Intent intent = new Intent(SplashScreen.this, MainActivity.class);

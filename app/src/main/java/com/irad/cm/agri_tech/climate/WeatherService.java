@@ -17,7 +17,9 @@ public interface WeatherService {
     Call<WeatherResponse> getSearchWeatherData(@Query("q") String city, @Query("APPID") String app_id);
 
     @GET("data/2.5/forecast?units=metric")
-//    Call<WeatherForeCast> getForeCastWeatherData(@Query("q") String city, @Query("APPID") String app_id);
+    Call<WeatherForeCast> getSearchForeCastWeatherData(@Query("q") String city, @Query("APPID") String app_id);
+
+    @GET("data/2.5/forecast?units=metric")
     Call<WeatherForeCast> getForeCastWeatherData(@Query("lat") double lat, @Query("lon") double lon, @Query("APPID") String app_id);
 
 }

@@ -18,6 +18,8 @@ import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
 import com.irad.cm.agri_tech.Utilities;
 
+import static maes.tech.intentanim.CustomIntent.customType;
+
 public class CropsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     Toolbar toolbar;
@@ -40,6 +42,7 @@ public class CropsActivity extends AppCompatActivity implements NavigationView.O
                 break;
             case R.id.home:
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                customType(CropsActivity.this,"bottom-to-up");
                 this.finish();
                 break;
         }
@@ -61,6 +64,8 @@ public class CropsActivity extends AppCompatActivity implements NavigationView.O
         toolbar = findViewById(R.id.crops_toolbar);
         toolbar.setTitle(R.string.crops_title);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         drawerLayout = findViewById(R.id.drawer_layout);
 

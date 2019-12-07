@@ -14,6 +14,7 @@ import com.squareup.picasso.Picasso;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -99,9 +100,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         }
     }
 
-//    public void updateList(List<WeatherForeCast.ForeCastList> newList) {
-//        list = new ArrayList<>();
-//        list.addAll(newList);
-//        notifyDataSetChanged();
-//    }
+    public void updateList(List<WeatherForeCast.ForeCastList> newList) {
+        list = new ArrayList<>();
+        list.addAll(newList);
+        notifyDataSetChanged();
+    }
 }

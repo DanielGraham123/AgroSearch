@@ -20,11 +20,11 @@ import android.view.MenuItem;
 import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
 import com.irad.cm.agri_tech.Utilities;
-import com.irad.cm.agri_tech.crops.AnnualCropsFragment;
-import com.irad.cm.agri_tech.crops.CropListFragment;
 import com.irad.cm.agri_tech.crops.CropsActivity;
-import com.irad.cm.agri_tech.crops.FisheriesFragment;
-import com.irad.cm.agri_tech.crops.PerennialCropsFragment;
+
+import org.apache.commons.lang3.StringUtils;
+
+import static maes.tech.intentanim.CustomIntent.customType;
 
 public class CropDetailActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     Toolbar toolbar;
@@ -34,6 +34,7 @@ public class CropDetailActivity extends AppCompatActivity implements NavigationV
     TabItem descTab, varietiesTab, diseaseTab, papersTab;
     Utilities utilities;
     CropsActivity cropsActivity;
+    public static String slug;
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -61,6 +62,7 @@ public class CropDetailActivity extends AppCompatActivity implements NavigationV
                 break;
             case R.id.home:
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                customType(CropDetailActivity.this,"bottom-to-up");
                 this.finish();
                 break;
         }
@@ -75,17 +77,22 @@ public class CropDetailActivity extends AppCompatActivity implements NavigationV
         setContentView(R.layout.activity_crop);
 
         toolbar = findViewById(R.id.crops_toolbar);
+        viewPager = findViewById(R.id.crop_viewPager);
 
         cropsActivity = new CropsActivity();
 
         Bundle mBundle = getIntent().getExtras();
         if (mBundle != null) {
-            toolbar.setTitle(mBundle.getString("title"));
+            toolbar.setTitle(StringUtils.capitalize(mBundle.getString("title")));
+            slug = mBundle.getString("slug");
 //            mFlower.setImageResource(mBundle.getInt("Image"));
 //            mDescription.setText(mBundle.getString("Description"));
         }
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         tabLayout = findViewById(R.id.crop_tabLayout);
@@ -94,7 +101,7 @@ public class CropDetailActivity extends AppCompatActivity implements NavigationV
         diseaseTab = findViewById(R.id.crop_disease);
         papersTab = findViewById(R.id.crop_papers);
 
-        ViewPager viewPager = findViewById(R.id.crop_viewPager);
+        final ViewPager viewPager = findViewById(R.id.crop_viewPager);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
@@ -113,6 +120,20 @@ public class CropDetailActivity extends AppCompatActivity implements NavigationV
 
         viewPager.setAdapter(pageAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     @Override

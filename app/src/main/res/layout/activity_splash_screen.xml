@@ -6,41 +6,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreen"
-    android:background="#1B5E20">
+    android:background="@drawable/splashbg">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splashrect">
+    </FrameLayout>
+
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="411dp"
-        android:layout_height="85dp"
+        android:layout_width="417dp"
+        android:layout_height="93dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="231dp"
-        android:layout_marginEnd="-4dp"
-        android:layout_marginRight="-4dp"
-        android:src="@drawable/agrosrch" />
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="-6dp"
+        android:layout_marginRight="-6dp"
+        android:src="@drawable/agrologo" />
+
+    <TextView
+        android:id="@+id/logotext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="-20dp"
+        android:gravity="center"
+        android:text="Agro~Search"
+        android:textColor="#E2A2C4A2"
+        android:textSize="55dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/powered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logotext"
+        android:layout_marginTop="115dp"
+        android:gravity="center"
+        android:text="Powered by,"
+        android:textColor="#fff"
+        android:textSize="10dp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/textV1"
         android:layout_width="402dp"
         android:layout_height="34dp"
-        android:layout_below="@+id/logo"
+        android:layout_below="@+id/powered"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="203dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
         android:gravity="center_horizontal"
         android:text="@string/powered_by"
-        android:textColor="#ffffff"
+        android:textColor="#fff"
         android:textSize="12dp" />
 
     <TextView

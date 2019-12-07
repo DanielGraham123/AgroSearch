@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.irad.cm.agri_tech"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -15,6 +15,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -39,5 +42,10 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     implementation 'org.apache.commons:commons-lang3:3.6'
+
+    implementation 'com.github.hajiyevelnur92:intentanimation:1.0'
+
+    implementation 'com.github.abdularis:CircularImageView:1.4'
+    implementation 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:1.2.0'
 
 }

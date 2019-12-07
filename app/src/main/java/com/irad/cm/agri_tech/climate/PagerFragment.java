@@ -26,7 +26,7 @@ public class PagerFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         WeatherActivity weatherActivity = (WeatherActivity) getActivity();
-        recyclerView.setAdapter(weatherActivity.getAdapter(bundle.getInt("day")));
+//        recyclerView.setAdapter(weatherActivity.getAdapter(bundle.getInt("day")));
 
         return view;
     }

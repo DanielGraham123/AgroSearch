@@ -19,86 +19,95 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="?actionBarSize"
+        android:layout_height="279dp"
         android:layout_marginLeft="16.0dip"
         android:layout_marginTop="6.0dip"
         android:layout_marginBottom="22.0dip"
-        android:baselineAligned="false">
-        <LinearLayout android:orientation="horizontal"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content">
+        android:baselineAligned="false"
+        android:paddingTop="?actionBarSize">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:text="79.4 °C"
-                    android:textColor="@color/activeAppearance"
-                    android:textSize="40dp"
-                    android:id="@+id/tempView"/>
 
                 <TextView
+                    android:id="@+id/tempView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="79.45 °C"
+                    android:textColor="@color/activeAppearance"
+                    android:textSize="40dp" />
+
+                <TextView
+                    android:id="@+id/descView"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Overcast clouds"
+                    android:text="Overcast clouds jdddddddddddddddddddddddd"
                     android:textColor="#fff"
-                    android:textSize="15dp"
-                    android:id="@+id/descView"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/windView"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:text="Weather: 17.1 kph"
                     android:textColor="#fff"
-                    android:textSize="15dp"
-                    android:id="@+id/windView"/>
-                    android:text="Weather: 17.1 kph"
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/pressureView"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:text="Pressure: 1012.4 hPa"
                     android:textColor="#fff"
-                    android:textSize="15dp"
-                    android:id="@+id/pressureView"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/humidityView"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:text="Humidity: 77 %"
                     android:textColor="#fff"
-                    android:textSize="15dp"
-                    android:id="@+id/humidityView"/>
+                    android:textSize="15dp" />
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="150dp"
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:orientation="vertical">
+            android:layout_gravity="right">
 
-            <ImageView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-20dp"
-                android:src="@drawable/cloud_test"
-                android:scaleType="center"
-                android:id="@+id/cloudView"/>
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:text="Fri 07.06.19"
-                android:textColor="@color/activeAppearance"
-                android:gravity="center|bottom"
-                android:id="@+id/dateView"/>
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/cloudView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-20dp"
+                    android:scaleType="center"
+                    android:src="@drawable/cloud_test" />
+
+                <TextView
+                    android:id="@+id/dateView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|bottom"
+                    android:text="Fri 07.06.19"
+                    android:textColor="@color/activeAppearance"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 
 </android.support.design.widget.CollapsingToolbarLayout>

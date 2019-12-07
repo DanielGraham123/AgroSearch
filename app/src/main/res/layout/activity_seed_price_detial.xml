@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".marketPrice.seedPriceDetail.SeedPriceDetialActivity">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <include layout="@layout/main_toolbar"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal">
+        <com.github.abdularis.civ.CircleImageView
+            android:id="@+id/seed_detail_image"
+            android:layout_width="100px"
+            android:layout_height="120px"
+            app:avatarBackgroundColor="#4CAF50"
+            android:src="@drawable/barley"
+            app:strokeColor="#4CAF50"
+            app:strokeWidth="4px"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:id="@+id/seed_detail_layout"
+            android:paddingLeft="16dp">
+            <TextView
+                android:id="@+id/seed_detail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Banane898"
+                android:textSize="16dp"
+                android:textColor="#000"
+                android:maxLines="2"/>
+            <TextView
+                android:id="@+id/seed_detail_other"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:text="Aussi appele banane mur"
+                android:textSize="12dp"
+                android:textColor="@color/colorAccent"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <ImageButton
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:id="@+id/star_btn"
+                android:background="@drawable/star_border"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Distribution Point"
+        android:padding="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="#B0E7E7E6"/>
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:visibility="visible"
+        android:id="@+id/distribution_detail_table">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="@string/variety_location"
+                android:textColor="#032506"
+                android:textSize="15dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="@string/variety_availability"
+                android:textColor="#032506"
+                android:textSize="15dp" />
+        </TableRow>
+    </TableLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Seed Price"
+        android:padding="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="#B0E7E7E6"/>
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:visibility="visible"
+        android:id="@+id/price_detail_table">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="Prix (FCFA)"
+                android:textColor="#032506"
+                android:textSize="15dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="Mesure"
+                android:textColor="#032506"
+                android:textSize="15dp" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

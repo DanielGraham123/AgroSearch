@@ -70,8 +70,46 @@
     <string name="crop_variety">Varieties</string>
     <string name="crop_disease">Diseases</string>
     <string name="crop_papers">Papers</string>
+    <string name="favorable_zone">Favorable Zones</string>
+    <string name="campaign_date">Campaign Dates</string>
+    <string name="campaign_name">Campaign</string>
+    <string name="campaign_regions">Regions</string>
+    <string name="campaign_from">From</string>
+    <string name="campaign_to">To</string>
+    <string name="market_price">Market Price</string>
+    <string name="market_region">Regions</string>
+    <string name="market_price_measure">Price</string>
+    <string name="technical_sheet">Technical Sheet</string>
+    <string name="download">Download</string>
+    <string name="adapted">Your area is fit for this crop</string>
+    <string name="not_adapted">Your area is not fit for this crop</string>
+    <string name="view_more">VIEW MORE...</string>
+    <string name="variety_location">Location</string>
+    <string name="variety_availability">Availability</string>
+    <string name="available">Available</string>
+    <string name="unavailable">Unavailable</string>
+    <string name="seed_price">Price</string>
+    <string name="yield">Yield</string>
+    <string name="maturity">Maturity</string>
+    <string name="particularity">Particularity</string>
+    <string name="points_of_distribution">Points of Distribution</string>
+
+    <!--Error Messages-->
+    <string name="unspecified">Unspecified</string>
+
+    <string name="permission_rationale" translatable="false">Please grant location permission to start the service</string>
+    <string name="permission_denied_explanation" translatable="false">You have not granted location permission. So the service cannot be started.</string>
+    <string name="settings" translatable="false">settings</string>
+    <string name="title_alert_no_intenet" translatable="false">No internet</string>
+    <string name="msg_alert_no_internet" translatable="false">Please make sure that you have active internet connection.</string>
+    <string name="no_google_playservice_available" translatable="false">No Google Playservice found. Please install it.</string>
+    <string name="msg_location_service_not_started" translatable="false">Location Tracking Not Started</string>
+    <string name="msg_location_service_started" translatable="false">Location Tracking Started</string>
+    <string name="btn_label_refresh" translatable="false">Refresh</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!--Market Price-->
+    <!--<>Market Price</>-->
 </resources>

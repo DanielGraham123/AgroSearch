@@ -16,7 +16,6 @@
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
@@ -24,11 +23,25 @@
             android:minHeight="?attr/actionBarSize"
             app:tabGravity="fill"
             app:tabIndicatorColor="@color/activeAppearance"
-            app:tabIndicatorGravity="bottom"
             app:tabIndicatorHeight="4dp"
-            app:tabMode="fixed"
             app:tabSelectedTextColor="#ffffff"
-            app:tabTextColor="#C1DDC1"></android.support.design.widget.TabLayout>
+            app:tabTextColor="#C1DDC1">
+            <android.support.design.widget.TabItem
+                android:id="@+id/todayTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tommorowTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tomorrow" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/othersTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other" />
+        </android.support.design.widget.TabLayout>
 
     </android.support.design.widget.AppBarLayout>
 

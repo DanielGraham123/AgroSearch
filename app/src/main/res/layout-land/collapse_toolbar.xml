@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CollapsingToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="255dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/collapse_toolbar"
+    android:background="?attr/colorPrimary"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:titleEnabled="false"
+    app:layout_scrollFlags="scroll">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:id="@+id/weather_toolbar"
+        android:background="?colorPrimary">
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="?actionBarSize"
+        android:layout_marginLeft="16.0dip"
+        android:layout_marginTop="6.0dip"
+        android:layout_marginBottom="22.0dip"
+        android:baselineAligned="false">
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:weightSum="2">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="79.4 °C"
+                    android:textColor="@color/activeAppearance"
+                    android:textSize="40dp"
+                    android:id="@+id/tempView"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Overcast clouds"
+                    android:textColor="#fff"
+                    android:textSize="15dp"
+                    android:id="@+id/descView"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="Weather: 17.1 kph"
+                    android:textColor="#fff"
+                    android:textSize="15dp"
+                    android:id="@+id/windView"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="Pressure: 1012.4 hPa"
+                    android:textColor="#fff"
+                    android:textSize="15dp"
+                    android:id="@+id/pressureView"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="Humidity: 77 %"
+                    android:textColor="#fff"
+                    android:textSize="15dp"
+                    android:id="@+id/humidityView"/>
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:layout_width="160dp"
+                android:layout_height="100dp"
+                android:layout_gravity="right"
+                android:src="@drawable/cloud_test"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/cloudView"/>
+
+            <TextView
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="130dp"
+                android:layout_marginRight="45dp"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:text="Fri 07.06.19"
+                android:textColor="@color/activeAppearance"
+                android:id="@+id/dateView"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.design.widget.CollapsingToolbarLayout>

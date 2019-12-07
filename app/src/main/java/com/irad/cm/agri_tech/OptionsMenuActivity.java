@@ -35,6 +35,7 @@ public abstract class OptionsMenuActivity extends AppCompatActivity {
 
         main = new MainActivity();
         weatherActivity = new WeatherActivity();
+        utilities = new Utilities(this, this);
 
         switch (item.getItemId()) {
             case R.id.action_translate:
