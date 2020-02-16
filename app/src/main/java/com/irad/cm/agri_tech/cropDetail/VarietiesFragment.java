@@ -3,20 +3,18 @@ package com.irad.cm.agri_tech.cropDetail;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.irad.cm.agri_tech.R;
 import com.irad.cm.agri_tech.RetrofitClientInstance;
 import com.irad.cm.agri_tech.Utilities;
-import com.irad.cm.agri_tech.crops.CropList;
-import com.irad.cm.agri_tech.crops.CropListAdapter;
-import com.irad.cm.agri_tech.crops.CropsService;
 
 import java.util.List;
 

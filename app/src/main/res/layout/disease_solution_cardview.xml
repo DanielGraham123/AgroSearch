@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mCardView"
+    app:cardBackgroundColor="@color/activeBackground"
+    android:clickable="true"
+    android:padding="25dp"
+    tools:ignore="WebViewLayout">
+
+    <WebView
+        android:id="@+id/solution_web_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The text in this TextView is justified. This feature is introduced in Android version >= 8.0. The text in this TextView is justified. This feature is introduced in Android version >= 8.0. The text in this TextView is justified. This feature is introduced in Android version >= 8.0."
+        android:textSize="16dp"
+        android:padding="25dp"
+        android:textColor="#2C302C"
+        android:justificationMode="inter_word" />
+
+</androidx.cardview.widget.CardView>

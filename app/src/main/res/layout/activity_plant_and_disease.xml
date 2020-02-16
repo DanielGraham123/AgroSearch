@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".plantAndDisease.PlantAndDiseaseActivity"
+    android:background="@drawable/background">
+
+    <include
+        layout="@layout/main_toolbar"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:tabSelectedTextColor="#FFF"
+        app:tabTextColor="@color/inactiveAppearance"
+        app:tabIndicatorHeight="4dp"
+        app:tabTextAppearance="@style/TextAppearance.AppCompat.Button"
+        android:layout_marginTop="56dp"
+        app:tabGravity="fill"
+        android:elevation="4dp"
+        app:tabIndicatorColor="@color/activeAppearance"
+        android:id="@+id/pltd_tabLayout">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plant"
+            android:id="@+id/plant_tab"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/disease"
+            android:id="@+id/disease_tab"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pltd_viewPager"></androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation"
+        android:background="#46343434" />
+</RelativeLayout>

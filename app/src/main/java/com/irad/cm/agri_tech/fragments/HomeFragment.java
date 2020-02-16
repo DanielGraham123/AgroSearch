@@ -2,14 +2,15 @@ package com.irad.cm.agri_tech.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
@@ -17,6 +18,7 @@ import com.irad.cm.agri_tech.climate.WeatherActivity;
 import com.irad.cm.agri_tech.cropDetail.MarketPrice;
 import com.irad.cm.agri_tech.crops.CropsActivity;
 import com.irad.cm.agri_tech.marketPrice.MarketPriceActivity;
+import com.irad.cm.agri_tech.plantAndDisease.PlantAndDiseaseActivity;
 
 import static maes.tech.intentanim.CustomIntent.customType;
 
@@ -49,7 +51,6 @@ public class HomeFragment extends Fragment {
 //                    Toast.makeText(getContext(), "Clicked at index "+index, Toast.LENGTH_SHORT).show();
                     switch (index) {
                         case 1:
-//                            MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new WeatherFragment(), "").addToBackStack("").commit();
                             startActivity(new Intent(getActivity(), WeatherActivity.class));
                             customType(getActivity(),"left-to-right");
                             break;
@@ -60,6 +61,10 @@ public class HomeFragment extends Fragment {
                         case 3:
                             startActivity(new Intent(getActivity(), MarketPriceActivity.class));
                             customType(getActivity(), "left-to-right");
+                            break;
+                        case 2:
+                            startActivity(new Intent(getActivity(), PlantAndDiseaseActivity.class));
+                            customType(getActivity(),"right-to-left");
                             break;
                     }
                 }

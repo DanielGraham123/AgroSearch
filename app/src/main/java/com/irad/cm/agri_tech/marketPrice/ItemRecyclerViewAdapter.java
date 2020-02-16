@@ -1,12 +1,8 @@
 package com.irad.cm.agri_tech.marketPrice;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +11,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.github.abdularis.civ.CircleImageView;
+import com.github.chrisbanes.photoview.PhotoView;
 import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
 import com.irad.cm.agri_tech.marketPrice.seedPriceDetail.SeedPriceDetialActivity;
@@ -58,9 +59,9 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
             holder.seedOtherText.setText(seedPriceList.get(position).getOtherName());
         }
 
-        Picasso.Builder builder = new Picasso.Builder(mContext);
-        builder.downloader(new OkHttp3Downloader(mContext));
-        builder.build().load(MainActivity.SITE_NAME + seedPriceList.get(position).getImage())
+        final Picasso.Builder picassoBuilder = new Picasso.Builder(mContext);
+        picassoBuilder.downloader(new OkHttp3Downloader(mContext));
+        picassoBuilder.build().load(MainActivity.SITE_URL + seedPriceList.get(position).getImage())
 //                .placeholder((R.drawable.ic_launcher_background))
                 .error(R.drawable.carrot)
                 .into(holder.imageView);
@@ -111,6 +112,30 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
                 intent.putExtra("seedPrice", seedPrice);
                 mContext.startActivity(intent);
             }
+        });
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Get the transition name from the string
+//                String transitionName = mContext.getResources().getString(R.string.transition_string);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                View mView = LayoutInflater.from(mContext).inflate(R.layout.dialog_custom_layout, null);
+                PhotoView photoView = mView.findViewById(R.id.expandedImageView);
+//                photoView.setImageResource();
+                picassoBuilder.build().load(MainActivity.SITE_URL + seedPriceList.get(position).getImage())
+                        .error(R.drawable.carrot)
+                        .into(photoView);
+                builder.setView(mView);
+
+                TextView seedNameDialog = mView.findViewById(R.id.seed_name_dialog);
+                seedNameDialog.setText(seedPriceList.get(position).getOtherName());
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+
         });
 
     }

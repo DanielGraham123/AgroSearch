@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_gravity="center"/>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/market_price_recyclerview"
@@ -24,6 +24,6 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="110dp"
         android:layout_marginBottom="60dp"
-        android:layoutAnimation="@anim/layout_animation_down_to_up"></android.support.v7.widget.RecyclerView>
+        android:layoutAnimation="@anim/layout_animation_down_to_up"></androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>

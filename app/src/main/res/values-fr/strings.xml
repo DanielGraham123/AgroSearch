@@ -61,4 +61,9 @@
     <string name="points_of_distribution">Points de Distribution</string>
     <string name="seed_price">Prix</string>
     <string name="yield">Rendement</string>
+    <string name="symptom">Symptom</string>
+    <string name="solution">Solution</string>
+    <string name="disease">Maladies</string>
+    <string name="plant">Plantes</string>
+    <string name="module4">Plantes &amp; Maladies</string>
 </resources>

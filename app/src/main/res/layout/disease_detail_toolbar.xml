@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.CollapsingToolbarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/disease_collapse_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="320dp"
+    android:background="@color/activeBackground"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:layout_scrollFlags="scroll"
+    app:titleEnabled="false">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/disease_detail_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_marginTop="6.0dip"
+        android:layout_marginBottom="22.0dip"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:paddingTop="?actionBarSize">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/disease_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_gravity="fill"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/mais895" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/disease_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:text="Disease Name"
+                android:textColor="#024B05"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/agent_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="-3dp"
+                android:text="Agent name"
+                android:textColor="#062407"
+                android:textSize="15dp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</com.google.android.material.appbar.CollapsingToolbarLayout>
+    <!--<android.support.v7.widget.Toolbar android:layout_width="match_parent"--><!--android:layout_height="?attr/actionBarSize"--><!--android:elevation="4dp"--><!--android:background="@color/colorPrimary"--><!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"--><!--android:id="@+id/disease_detail_toolbar"--><!--xmlns:android="http://schemas.android.com/apk/res/android">--><!--</android.support.v7.widget.Toolbar>-->

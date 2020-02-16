@@ -1,7 +1,6 @@
 package com.irad.cm.agri_tech.climate;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -10,42 +9,39 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabItem;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.irad.cm.agri_tech.fragments.LocateMeFragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.OptionsMenuActivity;
 import com.irad.cm.agri_tech.R;
 import com.irad.cm.agri_tech.SharedPreferenceConfig;
-import com.irad.cm.agri_tech.fragments.SignupFragment;
 import com.irad.cm.agri_tech.Utilities;
+import com.irad.cm.agri_tech.fragments.LocateMeFragment;
+import com.irad.cm.agri_tech.fragments.SignupFragment;
 import com.squareup.picasso.Picasso;
 
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -69,21 +65,9 @@ public class WeatherActivity extends OptionsMenuActivity {
 
     SharedPreferenceConfig sharedPreferenceConfig;
 
-//    final String[] titleViews = {getResources().getString(R.string.today), getResources().getString(R.string.tomorrow), getResources().getString(R.string.other)};
-
-    private List<WeatherForeCast.ForeCastList> longTermTodayWeather = new ArrayList<>();
-    private List<WeatherForeCast.ForeCastList> longTermTomorrowWeather = new ArrayList<>();
-    private List<WeatherForeCast.ForeCastList> longTermOtherWeather = new ArrayList<>();
-
-
-    public static int weatherListlength;
-    private String city;
-
     Date date;
     SimpleDateFormat sdf;
 
-    @SuppressLint("ResourceType")
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,9 +84,9 @@ public class WeatherActivity extends OptionsMenuActivity {
         viewPager = findViewById(R.id.pager);
 
         tabLayout = findViewById(R.id.tabs);
-        todayTab = findViewById(R.id.todayTab);
-        tomorrowTab = findViewById(R.id.tommorowTab);
-        othersTab = findViewById(R.id.othersTab);
+//        todayTab = findViewById(R.id.todayTab);
+//        tomorrowTab = findViewById(R.id.tommorowTab);
+//        othersTab = findViewById(R.id.othersTab);
 
         mainActivity = new MainActivity();
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
@@ -347,6 +331,7 @@ public class WeatherActivity extends OptionsMenuActivity {
 
             return "OK";
         }
+
     }
 
     private class SearchCityWeather extends AsyncTask<String, Void, Void> {
@@ -702,6 +687,10 @@ public class WeatherActivity extends OptionsMenuActivity {
     protected void onDestroy() {
         super.onDestroy();
 //        MainActivity.locationManager.removeUpdates(mainActivity);
+        if ( progressDialog!=null && progressDialog.isShowing() ){
+            progressDialog.cancel();
+            progressDialog.dismiss();
+        }
         finish();
     }
 }

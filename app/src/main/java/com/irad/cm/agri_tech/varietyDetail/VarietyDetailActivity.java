@@ -2,14 +2,7 @@ package com.irad.cm.agri_tech.varietyDetail;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.Gravity;
@@ -18,28 +11,28 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
 import com.irad.cm.agri_tech.Utilities;
-import com.irad.cm.agri_tech.cropDetail.CropDetailActivity;
-import com.irad.cm.agri_tech.cropDetail.Location;
 import com.irad.cm.agri_tech.cropDetail.Seed;
 import com.irad.cm.agri_tech.cropDetail.VarietyAdapter;
-import com.irad.cm.agri_tech.crops.AnnualCropsFragment;
-import com.irad.cm.agri_tech.crops.CropListFragment;
 import com.irad.cm.agri_tech.crops.CropsActivity;
-import com.irad.cm.agri_tech.crops.FisheriesFragment;
-import com.irad.cm.agri_tech.crops.PerennialCropsFragment;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static maes.tech.intentanim.CustomIntent.customType;
@@ -87,8 +80,6 @@ public class VarietyDetailActivity extends AppCompatActivity implements Navigati
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    MainActivity mainActivity;
 
     DrawerLayout drawerLayout;
 
@@ -151,7 +142,7 @@ public class VarietyDetailActivity extends AppCompatActivity implements Navigati
         }
         Picasso.Builder builder = new Picasso.Builder(this);
         builder.downloader(new OkHttp3Downloader(this));
-        builder.build().load(MainActivity.SITE_NAME + varietyDetails.get(position).getImage())
+        builder.build().load(MainActivity.SITE_URL + varietyDetails.get(position).getImage())
 //                .placeholder((R.drawable.ic_launcher_background))
                 .error(R.drawable.carrot)
                 .into(imageView);
@@ -195,6 +186,7 @@ public class VarietyDetailActivity extends AppCompatActivity implements Navigati
             locations += varietyDetails.get(position).getDistribution().get(i).getLocation().getName() + ", " + varietyDetails.get(position).getDistribution().get(i).getLocation().getAddress() + ", " + varietyDetails.get(position).getDistribution().get(i).getLocation().getPhoneNumber();
 
             locationsArray[i].setText(locations);
+            locationsArray[i].setWidth(370);
 
             locationsArray[i].setTextColor(Color.parseColor("#2B2A2A"));
             locationsArray[i].setPadding(5, 5, 5, 5);

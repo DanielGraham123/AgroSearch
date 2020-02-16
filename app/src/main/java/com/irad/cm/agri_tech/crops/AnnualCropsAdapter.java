@@ -2,18 +2,18 @@ package com.irad.cm.agri_tech.crops;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
-import com.irad.cm.agri_tech.RetrofitClientInstance;
 import com.irad.cm.agri_tech.cropDetail.CropDetailActivity;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
@@ -46,7 +46,7 @@ public class AnnualCropsAdapter extends RecyclerView.Adapter<CultureAnnuelleView
 
         Picasso.Builder builder = new Picasso.Builder(mContext);
         builder.downloader(new OkHttp3Downloader(mContext));
-        builder.build().load(MainActivity.SITE_NAME+cropList.get(position).getImage())
+        builder.build().load(MainActivity.SITE_URL+cropList.get(position).getImage())
 //                .placeholder((R.drawable.ic_launcher_background))
                 .error(R.drawable.ic_launcher_background)
                 .into(holder.mImage);

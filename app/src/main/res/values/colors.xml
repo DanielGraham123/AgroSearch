@@ -5,6 +5,8 @@
     <color name="colorAccent">#396343</color>
     <color name="activeAppearance">#DDF0DD</color>
     <color name="inactiveAppearance">#C5CCC5</color>
+    <color name="activeBackground">#F1F5F1</color>
+    <color name="inactiveBackground">#ECF0EC</color>
 </resources>
     <!--FF008A11-->
     <!--001800-->

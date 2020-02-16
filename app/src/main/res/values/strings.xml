@@ -15,6 +15,7 @@
     <string name="lastDescription" translatable="false"></string>
     <string name="lastTemperature" translatable="false"></string>
     <string name="lastLocation" translatable="false"></string>
+    <string name="cropDetail_last_location" translatable="false"></string>
 
     <!--Dialog titles-->
     <string name="choose_language">Translate App</string>
@@ -108,7 +109,20 @@
     <string name="btn_label_refresh" translatable="false">Refresh</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="symptom">Symptom</string>
+    <string name="solution">Solution</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="transition_string" translatable="false">hello</string>
+
+    <!--Plants and Diseases-->
+    <string name="module4">Plants &amp; Diseases</string>
+    <string name="disease">Diseases</string>
+    <string name="plant">Plants</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
 
     <!--Market Price-->
     <!--<>Market Price</>-->

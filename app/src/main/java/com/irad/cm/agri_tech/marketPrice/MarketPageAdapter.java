@@ -1,13 +1,9 @@
 package com.irad.cm.agri_tech.marketPrice;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 
-import com.irad.cm.agri_tech.cropDetail.DescriptionFragment;
-import com.irad.cm.agri_tech.cropDetail.DiseasesFragment;
-import com.irad.cm.agri_tech.cropDetail.PapersFragment;
-import com.irad.cm.agri_tech.cropDetail.VarietiesFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 public class MarketPageAdapter extends FragmentPagerAdapter {
 

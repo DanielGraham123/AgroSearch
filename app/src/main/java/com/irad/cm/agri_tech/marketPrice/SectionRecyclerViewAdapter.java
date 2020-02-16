@@ -1,21 +1,21 @@
 package com.irad.cm.agri_tech.marketPrice;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.irad.cm.agri_tech.R;
-import com.irad.cm.agri_tech.cropDetail.Seed;
 
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SectionRecyclerViewAdapter extends RecyclerView.Adapter<SectionRecyclerViewAdapter.SectionViewHolder> {
 
@@ -42,7 +42,7 @@ public class SectionRecyclerViewAdapter extends RecyclerView.Adapter<SectionRecy
 
         holder.itemRecyclerView.setHasFixedSize(true);
         holder.itemRecyclerView.setNestedScrollingEnabled(false);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
+        @SuppressLint("WrongConstant") LinearLayoutManager layoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
         holder.itemRecyclerView.setLayoutManager(layoutManager);
 
         ItemRecyclerViewAdapter adapter = new ItemRecyclerViewAdapter(mContext, position, seedSectionModel.getSeedPrice());

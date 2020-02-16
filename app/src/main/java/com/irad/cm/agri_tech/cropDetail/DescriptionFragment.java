@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.Gravity;
@@ -22,6 +21,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
@@ -122,7 +123,7 @@ public class DescriptionFragment extends Fragment {
     private void generateCropDetail(final Description description) {
         Picasso.Builder builder = new Picasso.Builder(getActivity());
         builder.downloader(new OkHttp3Downloader(getContext()));
-        builder.build().load(MainActivity.SITE_NAME+description.getImage())
+        builder.build().load(MainActivity.SITE_URL+description.getImage())
 //                .placeholder((R.drawable.ic_launcher_background))
                 .error(R.drawable.corn)
                 .into(imageView);
@@ -204,7 +205,7 @@ public class DescriptionFragment extends Fragment {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        utilities.downloadFile(MainActivity.SITE_NAME+description.getFicheTechnique());
+                        utilities.downloadFile(MainActivity.SITE_URL+description.getFicheTechnique());
                     }
                 }).start();
             }
@@ -216,4 +217,5 @@ public class DescriptionFragment extends Fragment {
         super.onDestroy();
         getActivity().unregisterReceiver(utilities.onDownloadComplete);
     }
+
 }

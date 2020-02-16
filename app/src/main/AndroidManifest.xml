@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.irad.cm.agri_tech">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,22 +15,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".marketPrice.seedPriceDetail.SeedPriceDetialActivity"
-            android:parentActivityName=".marketPrice.MarketPriceActivity"></activity>
-        <activity android:name=".marketPrice.MarketPriceActivity"
+        <activity
+            android:name=".plantAndDisease.PlantAndDiseaseActivity"
             android:parentActivityName=".MainActivity"/>
+        <activity android:name=".diseaseDetail.DiseaseDetailActivity" />
+        <activity
+            android:name=".marketPrice.seedPriceDetail.SeedPriceDetialActivity"
+            android:parentActivityName=".marketPrice.MarketPriceActivity" />
+        <activity
+            android:name=".marketPrice.MarketPriceActivity"
+            android:parentActivityName=".MainActivity" />
 
         <service
             android:name=".LocationMonitoringService"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".varietyDetail.VarietyDetailActivity"
-            android:parentActivityName=".cropDetail.CropDetailActivity"/>
-        <activity android:name=".cropDetail.CropDetailActivity"
-            android:parentActivityName=".crops.CropsActivity"/>
-        <activity android:name=".crops.CropsActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".varietyDetail.VarietyDetailActivity"
+            android:parentActivityName=".cropDetail.CropDetailActivity" />
+        <activity
+            android:name=".cropDetail.CropDetailActivity"
+            android:parentActivityName=".crops.CropsActivity" />
+        <activity
+            android:name=".crops.CropsActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".climate.WeatherActivity"
             android:parentActivityName=".MainActivity">

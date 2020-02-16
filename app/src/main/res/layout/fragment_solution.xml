@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".diseaseDetail.SolutionFragment">
+
+    <!--<ListView-->
+        <!--android:id="@+id/disease_listView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:divider="@color/colorAccent"-->
+        <!--android:dividerHeight="1dp"-->
+        <!--android:footerDividersEnabled="false" />-->
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#F1F5F1">-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:id="@+id/solution_recyclerview"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" >
+        </androidx.recyclerview.widget.RecyclerView>
+    <!--</ScrollView>-->
+</FrameLayout>

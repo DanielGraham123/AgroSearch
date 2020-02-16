@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<androidx.cardview.widget.CardView
     android:id="@+id/seed_price_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -26,6 +26,7 @@
                 android:layout_height="120px"
                 app:avatarBackgroundColor="#4CAF50"
                 android:src="@drawable/barley"
+                android:transitionName="@string/transition_string"
                 app:strokeColor="#4CAF50"
                 app:strokeWidth="4px"/>
             <LinearLayout
@@ -113,5 +114,5 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>
 

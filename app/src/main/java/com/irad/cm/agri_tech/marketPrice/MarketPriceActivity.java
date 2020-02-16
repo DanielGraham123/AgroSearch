@@ -5,26 +5,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.support.annotation.ColorRes;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import androidx.annotation.ColorRes;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
 import com.irad.cm.agri_tech.Utilities;
-import com.irad.cm.agri_tech.cropDetail.PageAdapter;
-import com.irad.cm.agri_tech.crops.CropsActivity;
-import com.irad.cm.agri_tech.fragments.HomeFragment;
 import com.irad.cm.agri_tech.fragments.LocateMeFragment;
 import com.irad.cm.agri_tech.fragments.SignupFragment;
 
@@ -34,6 +30,8 @@ public class MarketPriceActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
+
+//    public static ProgressDialog progressDialog;
 
     MainActivity mainActivity;
     Utilities utilities;
@@ -141,4 +139,21 @@ public class MarketPriceActivity extends AppCompatActivity {
 //                return super.onOptionsItemSelected(item);
 //        }
 //    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        finish();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
 }

@@ -2,8 +2,6 @@ package com.irad.cm.agri_tech.marketPrice.seedPriceDetail;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -12,6 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.github.abdularis.civ.CircleImageView;
 import com.irad.cm.agri_tech.MainActivity;
@@ -64,7 +65,7 @@ public class SeedPriceDetialActivity extends AppCompatActivity {
         }
         Picasso.Builder builder = new Picasso.Builder(this);
         builder.downloader(new OkHttp3Downloader(this));
-        builder.build().load(MainActivity.SITE_NAME + seedPrice.getImage())
+        builder.build().load(MainActivity.SITE_URL + seedPrice.getImage())
 //                .placeholder((R.drawable.ic_launcher_background))
                 .error(R.drawable.carrot)
                 .into(imageView);
@@ -89,6 +90,7 @@ public class SeedPriceDetialActivity extends AppCompatActivity {
             priceText.setGravity(Gravity.CENTER_HORIZONTAL);
             priceText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14f);
             priceText.setLayoutParams(textParams);
+            priceText.setWidth(100);
             priceTableRow.addView(priceText);
 
             measureText.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
@@ -96,6 +98,7 @@ public class SeedPriceDetialActivity extends AppCompatActivity {
             measureText.setGravity(Gravity.CENTER_HORIZONTAL);
             measureText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14f);
             measureText.setLayoutParams(textParams);
+            measureText.setWidth(150);
             priceTableRow.addView(measureText);
 
             seedPriceTable.addView(priceTableRow);
@@ -125,6 +128,7 @@ public class SeedPriceDetialActivity extends AppCompatActivity {
             locationsArray[i].setGravity(Gravity.CENTER_HORIZONTAL);
             locationsArray[i].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14f);
             locationsArray[i].setLayoutParams(textParams);
+            locationsArray[i].setWidth(300);
             tableRow[i].addView(locationsArray[i]);
 
             availArray[i] = new TextView(this);
@@ -139,6 +143,7 @@ public class SeedPriceDetialActivity extends AppCompatActivity {
             availArray[i].setGravity(Gravity.CENTER_HORIZONTAL);
             availArray[i].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14f);
             availArray[i].setLayoutParams(textParams);
+            availArray[i].setWidth(80);
             tableRow[i].addView(availArray[i]);
 
             distributionTable.addView(tableRow[i]);

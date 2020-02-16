@@ -3,9 +3,6 @@ package com.irad.cm.agri_tech.marketPrice;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -17,17 +14,17 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.github.abdularis.civ.AvatarImageView;
-import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
-import com.irad.cm.agri_tech.cropDetail.Seed;
 
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static java.lang.System.exit;
 
 public class MarketCardAdapter extends RecyclerView.Adapter<MarketCardViewHolder> {
     public Context mContext;
@@ -64,20 +61,20 @@ public class MarketCardAdapter extends RecyclerView.Adapter<MarketCardViewHolder
 
            String priceMeasure = "Vendue a ";
 
-           if (MainActivity.locationInfo.split(", ").length == 2) {
-               region = MainActivity.locationInfo.split(", ")[0];
-               nopriceMeasure = "Pas vendue a ";
-           } else if (MainActivity.locationInfo.split(", ").length == 3){
-               region = MainActivity.locationInfo.split(", ")[2];
-               if (region.contains(" ")) {
-                   region = region.split(" ")[region.split(" ").length-1];
-                   if (region.contains("\'")) {
-                       region = region.replace("\'", " ");
-                       region = region.split(" ")[1];
-                   }
-               }
-               nopriceMeasure = "Pas vendue au ";
-           }
+//           if (MainActivity.locationInfo.split(", ").length == 2) {
+//               region = MainActivity.locationInfo.split(", ")[0];
+//               nopriceMeasure = "Pas vendue a ";
+//           } else if (MainActivity.locationInfo.split(", ").length == 3){
+//               region = MainActivity.locationInfo.split(", ")[2];
+//               if (region.contains(" ")) {
+//                   region = region.split(" ")[region.split(" ").length-1];
+//                   if (region.contains("\'")) {
+//                       region = region.replace("\'", " ");
+//                       region = region.split(" ")[1];
+//                   }
+//               }
+//               nopriceMeasure = "Pas vendue au ";
+//           }
 
 //        Toast.makeText(mContext, "Votre localite est "+region, Toast.LENGTH_LONG).show();
 
@@ -88,9 +85,9 @@ public class MarketCardAdapter extends RecyclerView.Adapter<MarketCardViewHolder
                for (int i = 0; i < mp.size(); i++) {
                    if (mp.get(i).getRegion().contains(region)) {
                        regionAvailable = true;
-                       priceMeasure += mp.get(i).getPrice() + "frs/" + mp.get(i).getMeasure();
-                       priceMeasure += " au " + region;
-                       holder.mesureText.setText(priceMeasure);
+//                       priceMeasure += mp.get(i).getPrice() + "frs/" + mp.get(i).getMeasure();
+//                       priceMeasure += " au " + region;
+//                       holder.mesureText.setText(priceMeasure);
                        break;
                    } else {
                        regionAvailable =false;
@@ -124,6 +121,7 @@ public class MarketCardAdapter extends RecyclerView.Adapter<MarketCardViewHolder
                marketRegionsArray[i].setPadding(10, 10, 10, 10);
                marketRegionsArray[i].setGravity(Gravity.CENTER_HORIZONTAL);
                marketRegionsArray[i].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14f);
+               marketRegionsArray[i].setWidth(250);
                TableRow.LayoutParams textParams = new TableRow.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                marketRegionsArray[i].setLayoutParams(textParams);
 
@@ -137,6 +135,7 @@ public class MarketCardAdapter extends RecyclerView.Adapter<MarketCardViewHolder
                marketPricesArray[i].setGravity(Gravity.CENTER_HORIZONTAL);
                marketPricesArray[i].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14f);
                marketPricesArray[i].setLayoutParams(textParams);
+               marketPricesArray[i].setWidth(80);
                tableRow[i].addView(marketPricesArray[i]);
 
                holder.marketTable.addView(tableRow[i]);
@@ -218,7 +217,7 @@ class MarketCardViewHolder extends RecyclerView.ViewHolder {
 
         avatar = itemView.findViewById(R.id.crop_image);
         cropNameText = itemView.findViewById(R.id.crop_text);
-        mesureText = itemView.findViewById(R.id.price_mesure_text);
+//        mesureText = itemView.findViewById(R.id.price_mesure_text);
         showText = itemView.findViewById(R.id.show_text);
         startBtn = itemView.findViewById(R.id.star_btn);
         marketTable = itemView.findViewById(R.id.market_table);

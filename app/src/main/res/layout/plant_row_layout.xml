@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/plant_cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardCornerRadius="1dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal">
+            <!--<com.github.abdularis.civ.CircleImageView-->
+                <!--android:id="@+id/seed_image"-->
+                <!--android:layout_width="100px"-->
+                <!--android:layout_height="120px"-->
+                <!--app:avatarBackgroundColor="#4CAF50"-->
+                <!--android:src="@drawable/barley"-->
+                <!--android:transitionName="@string/transition_string"-->
+                <!--app:strokeColor="#4CAF50"-->
+                <!--app:strokeWidth="4px"/>-->
+            <com.github.abdularis.civ.AvatarImageView
+                android:id="@+id/seed_avatar"
+                android:layout_width="100px"
+                android:layout_height="100px"
+                app:text="B"
+                app:textSize="22sp"
+                app:textColor="#fff"
+                app:avatarBackgroundColor="#4CAF50"
+                android:src="@drawable/mais"
+                app:strokeColor="#4CAF50"
+                app:strokeWidth="4px"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:paddingLeft="16dp">
+
+                <TextView
+                    android:id="@+id/seed_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:maxLines="2"
+                    android:text="Banane898"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
+                <!--<TextView-->
+                    <!--android:id="@+id/seed_other_text"-->
+                    <!--android:visibility="visible"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:text="Banane mur"-->
+                    <!--android:textSize="12dp"-->
+                    <!--android:textColor="@color/colorAccent"/>-->
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+

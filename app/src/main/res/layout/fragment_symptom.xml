@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".diseaseDetail.SymptomFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/symptoms_recyclerview"
+        android:scrollbars="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#F1F5F1">-->
+        <!--<WebView-->
+            <!--android:id="@+id/symptom_web_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="The text in this TextView is justified. This feature is introduced in Android version >= 8.0. The text in this TextView is justified. This feature is introduced in Android version >= 8.0. The text in this TextView is justified. This feature is introduced in Android version >= 8.0."-->
+            <!--android:textSize="16dp"-->
+            <!--android:padding="20dp"-->
+            <!--android:textColor="#2C302C"-->
+            <!--android:justificationMode="inter_word" />-->
+    <!--</ScrollView>-->
+
+</FrameLayout>

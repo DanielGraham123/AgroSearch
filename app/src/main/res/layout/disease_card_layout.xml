@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/disease_cardview"
+    android:layout_width="match_parent"
+    android:layout_height="245dp"
+    android:layout_gravity="center"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="1dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/disease_title"
+            android:text="DISEASE DISEASE DISEASE "
+            android:gravity="left"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:src="@drawable/banana"
+            android:id="@+id/disease_img"
+            android:scaleType="fitXY" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:id="@+id/view_more_btn"
+            android:text="@string/view_more"
+            android:background="@drawable/ripple_effect"
+            android:layout_marginTop="15dp"
+            android:textSize="15dp"
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+

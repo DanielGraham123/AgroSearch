@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mCardView"
+    app:cardBackgroundColor="@color/activeBackground"
+    android:clickable="true"
+    android:padding="25dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/crop_image"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:layout_gravity="center"
+            android:src="@drawable/diseaseplant"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:paddingLeft="16dp">
+            <TextView
+                android:id="@+id/disease_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Banane Banane Banane Banane BananeBanane BananeBananeBananeBanane BananeBananeBanane BananeBananeBanane BananeBananeBanane BananeBananeBanane Banane BananeBanane
+                Catalina"
+                android:textSize="16dp"
+                android:textColor="#2C302C"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ACA8A8"/>
+
+</androidx.cardview.widget.CardView>

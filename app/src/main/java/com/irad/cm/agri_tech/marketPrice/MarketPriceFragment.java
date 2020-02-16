@@ -5,14 +5,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,14 +17,16 @@ import android.view.animation.LayoutAnimationController;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
 import com.irad.cm.agri_tech.RetrofitClientInstance;
 import com.irad.cm.agri_tech.Utilities;
-import com.irad.cm.agri_tech.crops.All;
-import com.irad.cm.agri_tech.crops.CropListAdapter;
-
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,8 +37,6 @@ import java.util.Set;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static java.lang.System.exit;
 
 @SuppressLint("NewApi")
 public class MarketPriceFragment extends Fragment implements SearchView.OnQueryTextListener {
@@ -111,26 +104,25 @@ public class MarketPriceFragment extends Fragment implements SearchView.OnQueryT
 
     private void generatePrices(List<Price> priceList) {
         prices = priceList;
-        if (MainActivity.locationInfo == null) {
-                dialogBuilder = new AlertDialog.Builder(getActivity());
-                dialogBuilder.setTitle("Error!!!");
-                dialogBuilder.setMessage("Problem getting your location\n\nData might be incorrect!");
-                dialogBuilder.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-
-                AlertDialog dialog = dialogBuilder.create();
-                dialog.show();
-        } else {
+//        if (MainActivity.locationInfo == null) {
+//                dialogBuilder = new AlertDialog.Builder(getActivity());
+//                dialogBuilder.setTitle("Error!!!");
+//                dialogBuilder.setMessage("Problem getting your location\n\nData might be incorrect!");
+//                dialogBuilder.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        dialogInterface.dismiss();
+//                    }
+//                });
+//
+//                AlertDialog dialog = dialogBuilder.create();
+//                dialog.show();
+//        } else {
             marketCardAdapter = new MarketCardAdapter(priceList, getContext());
             int resId = R.anim.layout_animation_down_to_up;
             LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getContext(), resId);
             mRecyclerView.setLayoutAnimation(animation);
             mRecyclerView.setAdapter(marketCardAdapter);
-        }
     }
 
     private void setItems() {

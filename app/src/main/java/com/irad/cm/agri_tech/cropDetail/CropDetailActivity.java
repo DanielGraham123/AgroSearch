@@ -1,22 +1,25 @@
 package com.irad.cm.agri_tech.cropDetail;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabItem;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
 import com.irad.cm.agri_tech.Utilities;
@@ -34,7 +37,11 @@ public class CropDetailActivity extends AppCompatActivity implements NavigationV
     TabItem descTab, varietiesTab, diseaseTab, papersTab;
     Utilities utilities;
     CropsActivity cropsActivity;
+    public static String locationInfo;
     public static String slug;
+
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor editor;
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -81,6 +88,8 @@ public class CropDetailActivity extends AppCompatActivity implements NavigationV
 
         cropsActivity = new CropsActivity();
 
+        sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+
         Bundle mBundle = getIntent().getExtras();
         if (mBundle != null) {
             toolbar.setTitle(StringUtils.capitalize(mBundle.getString("title")));
@@ -101,7 +110,7 @@ public class CropDetailActivity extends AppCompatActivity implements NavigationV
         diseaseTab = findViewById(R.id.crop_disease);
         papersTab = findViewById(R.id.crop_papers);
 
-        final ViewPager viewPager = findViewById(R.id.crop_viewPager);
+//        final ViewPager viewPager = findViewById(R.id.crop_viewPager);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
@@ -164,4 +173,31 @@ public class CropDetailActivity extends AppCompatActivity implements NavigationV
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        editor = sharedPref.edit();
+        editor.putString(getString(R.string.cropDetail_last_location), MainActivity.locationInfo);
+        editor.commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainActivity.locationInfo = sharedPref.getString(getString(R.string.cropDetail_last_location), "");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+
 }

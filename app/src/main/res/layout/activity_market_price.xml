@@ -11,7 +11,7 @@
     <include
         layout="@layout/main_toolbar"/>
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -25,25 +25,25 @@
         app:tabIndicatorColor="@color/activeAppearance"
         android:id="@+id/market_tabLayout">
 
-    <android.support.design.widget.TabItem
+    <com.google.android.material.tabs.TabItem
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/moneybag"
         android:id="@+id/market_price_tab"/>
 
-    <android.support.design.widget.TabItem
+    <com.google.android.material.tabs.TabItem
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/sproutmoney2"
         android:id="@+id/seed_price_tab"/>
-    </android.support.design.widget.TabLayout>
+    </com.google.android.material.tabs.TabLayout>
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/market_viewPager"></android.support.v4.view.ViewPager>
+        android:id="@+id/market_viewPager"></androidx.viewpager.widget.ViewPager>
 
-    <android.support.design.widget.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -12,6 +12,9 @@ public class CropDetailList {
     @SerializedName("Seed")
     @Expose
     private List<Seed> seed = null;
+    @SerializedName("Disease")
+    @Expose
+    private List<Disease> disease = null;
 
     public Description getDescription() {
         return description;
@@ -27,6 +30,14 @@ public class CropDetailList {
 
     public void setSeed(List<Seed> seed) {
         this.seed = seed;
+    }
+
+    public List<Disease> getDisease() {
+        return disease;
+    }
+
+    public void setDisease(List<Disease> disease) {
+        this.disease = disease;
     }
 
 }

@@ -5,16 +5,17 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.irad.cm.agri_tech.MainActivity;
 import com.irad.cm.agri_tech.R;
@@ -85,15 +86,15 @@ public class VarietyAdapter extends RecyclerView.Adapter<VarietyViewHolder> {
 
         }
 
-        if (!seedList.get(position).getAdaptationZone().contains(region)) {
-            holder.adaptedText.setText(mContext.getString(R.string.not_adapted));
-        } else {
-            holder.adaptedText.setText(mContext.getString(R.string.adapted));
-        }
+//        if (!seedList.get(position).getAdaptationZone().contains(region)) {
+//            holder.adaptedText.setText(mContext.getString(R.string.not_adapted));
+//        } else {
+//            holder.adaptedText.setText(mContext.getString(R.string.adapted));
+//        }
 
         Picasso.Builder builder = new Picasso.Builder(mContext);
         builder.downloader(new OkHttp3Downloader(mContext));
-        builder.build().load(MainActivity.SITE_NAME + seedList.get(position).getImage())
+        builder.build().load(MainActivity.SITE_URL + seedList.get(position).getImage())
 //                .placeholder((R.drawable.ic_launcher_background))
                 .error(R.drawable.carrot)
                 .into(holder.mImage);
@@ -148,7 +149,7 @@ class VarietyViewHolder extends RecyclerView.ViewHolder {
         mImage = itemView.findViewById(R.id.seed_image);
         varietyName = itemView.findViewById(R.id.variety_text);
         otherName = itemView.findViewById(R.id.other_name_text);
-        adaptedText = itemView.findViewById(R.id.adapted_text);
+//        adaptedText = itemView.findViewById(R.id.adapted_text);
         viewMoreBtn = itemView.findViewById(R.id.view_more_btn);
 
         mCardView = itemView.findViewById(R.id.variety_cardview);

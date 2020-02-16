@@ -1,12 +1,13 @@
 package com.irad.cm.agri_tech.climate;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.irad.cm.agri_tech.R;
 import com.squareup.picasso.Picasso;
@@ -38,7 +39,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int position) {
 
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.text_view_layout, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.weather_view_layout, viewGroup, false);
         MyViewHolder myViewHolder = new MyViewHolder(view);
 
         return myViewHolder;
