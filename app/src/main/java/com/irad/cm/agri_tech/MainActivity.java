@@ -37,6 +37,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.databinding.library.baseAdapters.BuildConfig;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     String positiveText;
 
     private Utilities utilities;
+    public static LocationInfo locationInformation;
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -152,6 +154,10 @@ public class MainActivity extends AppCompatActivity {
                                 MainActivity.longitude = Double.parseDouble(longitude);
                                 addresses = geocoder.getFromLocation(MainActivity.latitude, MainActivity.longitude, 1);
 //                                    region = addresses.get(0).getLocality();
+                                locationInformation = new LocationInfo();
+                                locationInformation.setCity(addresses.get(0).getLocality());
+                                locationInformation.setCountry(addresses.get(0).getCountryName());
+                                locationInformation.setRegion(addresses.get(0).getAdminArea());
                                 locationInfo = addresses.get(0).getLocality() + ", ";
                                 locationInfo += addresses.get(0).getCountryName() + ", ";
                                 locationInfo += addresses.get(0).getAdminArea();
@@ -482,22 +488,13 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
                 // Permission denied.
-
-                // Notify the img_user via a SnackBar that they have rejected a core permission for the
-                // app, which makes the Activity useless. In a real app, core permissions would
-                // typically be best requested during a welcome-screen flow.
-
-                // Additionally, it is important to remember that a permission might have been
-                // rejected without asking the img_user for permission (device policy or "Never ask
-                // again" prompts). Therefore, a img_user interface affordance is typically implemented
-                // when permissions are denied. Otherwise, your app could appear unresponsive to
-                // touches or interactions which have required permissions.
                 showSnackbar(R.string.permission_denied_explanation,
                         R.string.settings, new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
                                 // Build intent that displays the App settings screen.
                                 Intent intent = new Intent();
+
                                 intent.setAction(
                                         Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                                 Uri uri = Uri.fromParts("package",
